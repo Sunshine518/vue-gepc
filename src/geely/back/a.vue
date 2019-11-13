@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-  我是A
+  我是Aaaa
   </div>
 </template>
 
