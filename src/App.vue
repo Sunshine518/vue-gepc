@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import "./assets/iconfont/iconfont.css"
 export default {
   name: 'app',
   components: {
@@ -24,4 +24,5 @@ body{
   text-align: center;
   color: #2c3e50;
 }
+
 </style>

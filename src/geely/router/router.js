@@ -15,7 +15,22 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Home,
+            children:[
+                {
+                    path: '/Page1',
+                    name: 'Page1',
+                    component: Page1
+                },  {
+                    path: '/Page2',
+                    name: 'Page2',
+                    component: Page2
+                },  {
+                    path: '/Page3',
+                    name: 'Page3',
+                    component: Page3
+                }
+            ]
         },
         {
             path: '/login',

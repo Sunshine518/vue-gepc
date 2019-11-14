@@ -1,10 +1,11 @@
 <template>
     <div class="hello">
         <el-menu default-active="1" class="el-menu-vertical-demo" @select="handleSelect">
-            <el-menu-item index="1"><i class="el-icon-message"></i>导航一</el-menu-item>
-            <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
-            <el-menu-item index="4"><i class="el-icon-setting"></i>退出</el-menu-item>
+            <el-menu-item index="1"><i class="el-icon-message"></i>配置查询</el-menu-item>
+            <el-menu-item index="2"><i class="el-icon-menu"></i>海外技术通知单</el-menu-item>
+            <el-menu-item index="3"><i class="el-icon-setting"></i>答疑平台</el-menu-item>
+            <el-menu-item index="4"><i class="el-icon-setting"></i>购物车</el-menu-item>
+            <el-menu-item index="5"><i class="el-icon-setting"></i>备件所属车系</el-menu-item>
         </el-menu>
     </div>
 </template>
@@ -33,7 +34,10 @@
                         this.$router.push('/Page3')
                         break;
                     case '4':
-                        this.logout()
+                        this.$router.push('/Page3')
+                        break;
+                    case '5':
+                        this.$router.push('/Page3')
                         break;
                 }
             },

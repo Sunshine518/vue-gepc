@@ -35,6 +35,7 @@
 <script>
     import axios from '../../https.js'
     import ajax from '../../until/ajax.js'
+    import session from '../../until/session.js'
 
     export default {
         name: 'home',
@@ -67,8 +68,10 @@
               let password =  ajax.AESEncrypt(obj.password, '1111222233334444')
               let params = {...obj,password:password}
                 window.console.log(params)
-                axios.fetchPost('/login:pc',params ).then(() => {
-                        this.$router.push('/')
+                axios.fetchPost('/login:pc',params ).then((res) => {
+                    session.authenticateSuccess(res.data.data.token)
+                    // localStorage.setItem('status', JSON.stringify(res.data.data));
+                    this.$router.push('/')
                     }).catch(err=>{
                            window.console.log(err)
                         }
