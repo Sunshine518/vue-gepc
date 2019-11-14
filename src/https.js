@@ -11,7 +11,6 @@ axios.interceptors.request.use((config) => {
     if(config.method  === 'post'){
         window.console.log("config.data",config.data)
         // config.data = JSON.stringify(config.data);
-        // window.console.log("config.data222",config.data)
 
     }
     return config;

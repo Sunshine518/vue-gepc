@@ -9,11 +9,15 @@
 </template>
 
 <script>
+    import axios from '../https.js'
+
     export default {
         data() {
             return {}
         },
-
+        created() {
+            this.getMenu()
+        },
         methods: {
             handleSelect(key) {
                 switch (key) {
@@ -28,6 +32,14 @@
                         break;
                 }
             },
+            getMenu(){
+                axios.fetchGet('/Menu/platformId/4' ).then((res) => {
+                    window.console.log(res)
+                }).catch(err=>{
+                        window.console.log(err)
+                    }
+                )
+            }
 
         },
     }

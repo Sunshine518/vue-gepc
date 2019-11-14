@@ -5,24 +5,24 @@
             <el-form :model="numberValidateForm" ref="numberValidateForm" label-width="80px" class="demo-ruleForm">
                 <el-form-item
                         label="用户名"
-                        prop="username"
+                        prop="loginName"
                         :rules="[
                       { required: true, message: '请输入用户名'},
                     ]"
                 >
-                    <el-input v-model.number="numberValidateForm.username" auto-complete="off"
+                    <el-input v-model.number="numberValidateForm.loginName" auto-complete="off"
                               style="width: 240px"></el-input>
                 </el-form-item>
+
                 <el-form-item
                         label="密码"
                         prop="password"
                         :rules="[
-                      { required: true, message: '密码不能为空'},
-                    ]"
-                >
-                    <el-input type="password" v-model.number="numberValidateForm.password" auto-complete="off"
-                              style="width: 240px"></el-input>
+                      { required: true, message: '请输入密码'},
+                    ]">
+                    <el-input type="password" v-model="numberValidateForm.password" autocomplete="off"  style="width: 240px"></el-input>
                 </el-form-item>
+
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
                     <el-button @click="resetForm('numberValidateForm')">重置</el-button>
@@ -33,14 +33,16 @@
 </template>
 
 <script>
-    import https from '../../https.js'
+    import axios from '../../https.js'
+    import ajax from '../../until/ajax.js'
+
     export default {
         name: 'home',
         components: {},
         data() {
             return {
                 numberValidateForm: {
-                    username: '',
+                    loginName: '',
                     password: ''
                 }
             }
@@ -62,9 +64,11 @@
                 this.$refs[formName].resetFields();
             },
             login(obj){
-                window.console.log(obj)
-                    https.fetchPost('/login:pc',obj ).then((data) => {
-                        window.console.log(data)
+              let password =  ajax.AESEncrypt(obj.password, '1111222233334444')
+              let params = {...obj,password:password}
+                window.console.log(params)
+                axios.fetchPost('/login:pc',params ).then(() => {
+                        this.$router.push('/')
                     }).catch(err=>{
                            window.console.log(err)
                         }
