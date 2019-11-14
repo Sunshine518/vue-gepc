@@ -10,6 +10,7 @@ import Page3 from '../back/c.vue'
 Vue.use(Router)
 
 export default new Router({
+    mode:'history',   //去除路径锚点
     routes: [
         {
             path: '/',
