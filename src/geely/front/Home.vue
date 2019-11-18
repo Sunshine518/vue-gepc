@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <el-container>
-            <el-header style="padding: 0;height: 64px">
+            <el-header style="padding: 0">
                 <Header/>
             </el-header>
             <el-container>
@@ -38,5 +38,9 @@
 
 
 <style scoped >
+
+    .el-main{
+    background-color: #f0f2f5
+    }
 
 </style>

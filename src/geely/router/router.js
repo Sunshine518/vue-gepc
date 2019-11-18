@@ -7,6 +7,10 @@ import Page1 from '../back/a.vue'
 import Page2 from '../back/b.vue'
 import Page3 from '../back/c.vue'
 
+//前台
+import CarsSpareParts from '../front/CarsSpareParts.vue'
+import NewsPage from '../front/NewsPage.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -29,8 +33,17 @@ export default new Router({
                     path: '/Page3',
                     name: 'Page3',
                     component: Page3
+                },  {
+                    path: '/carsSpareParts',
+                    name: 'carsSpareParts',
+                    component: CarsSpareParts
                 }
             ]
+        },
+        {
+            path: '/newsPage',
+            name: 'newsPage',
+            component: NewsPage,
         },
         {
             path: '/login',

@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <el-menu default-active="1" class="el-menu-vertical-demo" @select="handleSelect">
+        <el-menu default-active="1"  @select="handleSelect" style="text-align: left">
             <el-menu-item index="1"><i class="el-icon-message"></i>配置查询</el-menu-item>
             <el-menu-item index="2"><i class="el-icon-menu"></i>海外技术通知单</el-menu-item>
             <el-menu-item index="3"><i class="el-icon-setting"></i>答疑平台</el-menu-item>
@@ -20,6 +20,7 @@
         },
         created() {
             this.getMenu()
+            this.getUserInfo()
         },
         methods: {
             handleSelect(key) {
@@ -37,13 +38,21 @@
                         this.$router.push('/Page3')
                         break;
                     case '5':
-                        this.$router.push('/Page3')
+                        this.$router.push('/carsSpareParts')
                         break;
                 }
             },
+            getUserInfo(){
+                axios.fetchGet('/userInfo' ).then((res) => {
+                    // window.console.log(res)
+                }).catch(err=>{
+                        window.console.log(err)
+                    }
+                )
+            },
             getMenu(){
-                axios.fetchGet('/Menu/platformId/4?companyId=6' ).then((res) => {
-                    window.console.log(res)
+                axios.fetchGet('/Menu/platformId/4' ).then((res) => {
+                    // window.console.log(res)
                 }).catch(err=>{
                         window.console.log(err)
                     }
