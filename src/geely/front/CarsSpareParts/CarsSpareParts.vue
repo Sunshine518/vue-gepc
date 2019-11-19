@@ -69,7 +69,7 @@
 </template>
 
 <script>
-    import axios from '../../https.js'
+    import axios from '../../../https.js'
 
     export default {
         name: 'home',
@@ -103,7 +103,9 @@
             },
             handleClick(row) {
                 console.log(row);
-                this.$router.push('/newsPage')
+                //跳转新页面
+                let routeData = this.$router.resolve({ path: '/carsSparePartsDetails'});
+                window.open(routeData.href, '_blank');
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);

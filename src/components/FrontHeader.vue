@@ -1,15 +1,17 @@
 <template>
     <div class="container">
         <div class="logo_box">
-            <img :src="imgUrl" width="250px">
+            <img :src="imgUrl" width="200px">
             <div>吉利电子备件目录(GEPC)</div>
         </div>
         <div class="action">
             <div class="action_common">中文  /  EN</div>
-            <i class="iconfont icon-desktop action_common" style="font-size: 20px" @click="goToBack"/>
-            <el-dropdown class="action_common" @command="handleCommand">
+            <el-tooltip class="item" effect="dark" content="进入后台" placement="bottom-start">
+                <i class="iconfont icon-desktop action_common" style="font-size: 20px" @click="goToBack" />
+            </el-tooltip>
+            <el-dropdown class="action_common" @command="handleCommand" >
               <span>
-                  <img :src="peopleUrl" style='height:25px;width:25px;borderRadius:50%'>
+                  <img :src="peopleUrl" style='height:25px;width:25px;borderRadius:50%;margin-top: 25px'>
               </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item command="changePassWord">修改密码</el-dropdown-item>
@@ -28,7 +30,7 @@
         name: 'hello',
         data() {
             return {
-                imgUrl: require("../assets/image/logo.png"),
+                imgUrl: require("../assets/image/logo.jpg"),
                 peopleUrl: require("../assets/image/people.jpg")
             }
         },
@@ -53,7 +55,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
     .container {
         background-color: #113362;
         /*background-image: linear-gradient(to right, #fff 0%, #113362 100%);*/
@@ -72,6 +74,9 @@
         position: absolute;
         left: 0;
         font-size: 28px;
+        div{
+            margin-left: 25px;
+        }
     }
 
     .action {

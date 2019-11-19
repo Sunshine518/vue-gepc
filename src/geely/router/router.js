@@ -8,8 +8,9 @@ import Page2 from '../back/b.vue'
 import Page3 from '../back/c.vue'
 
 //前台
-import CarsSpareParts from '../front/CarsSpareParts.vue'
-import NewsPage from '../front/NewsPage.vue'
+import CarsSpareParts from '../front/CarsSpareParts/CarsSpareParts.vue'
+import CarsSparePartsDetails from '../front/CarsSpareParts/CarsSparePartsDetails.vue'
+import ShoppingCart from '../front/ShoppingCart/ShoppingCart.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ export default new Router({
                     name: 'Page3',
                     component: Page3
                 },  {
+                    path: '/shoppingCart',
+                    name: 'shoppingCart',
+                    component: ShoppingCart
+                },  {
                     path: '/carsSpareParts',
                     name: 'carsSpareParts',
                     component: CarsSpareParts
@@ -41,9 +46,9 @@ export default new Router({
             ]
         },
         {
-            path: '/newsPage',
-            name: 'newsPage',
-            component: NewsPage,
+            path: '/carsSparePartsDetails',
+            name: 'carsSparePartsDetails',
+            component: CarsSparePartsDetails,
         },
         {
             path: '/login',
