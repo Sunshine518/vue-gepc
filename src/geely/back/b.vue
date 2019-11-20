@@ -1,16 +1,28 @@
 <template>
-  <div class="hello">
-  我是b
+  <div class="store">
+    <!-- props 传递值 -->
+    <custom-input :value="value" @customInput="handleInput" :placeholder="placeholder" />
+    <p v-text="value"></p>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'hello',
-}
+    import CustomInput from './CustomInput.vue'
+    export default {
+        name: 'Store',
+        components: {
+            CustomInput
+        },
+        data() {
+            return {
+                value: '',
+                placeholder: '自定义事件传递值'
+            }
+        },
+        methods: {
+            //  自定义事假处理器
+            handleInput(val) {
+                this.value = val
+            }
+        }
+    }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>

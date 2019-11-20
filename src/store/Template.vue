@@ -11,7 +11,8 @@
 </template>
 
 <script>
-  import {mapState,mapActions,mapGetters} from 'vuex';
+    import { createNamespacedHelpers } from 'vuex'
+    const { mapState,mapActions,mapGetters } = createNamespacedHelpers('noticeStore')
 
     export default {
         data() {
@@ -32,7 +33,7 @@
                 'reduceFun'
             ]),
             add(){
-                var n = 10;
+                let n = 10;
                 this.addFun(n)
             },
             reduce(){

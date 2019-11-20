@@ -11,6 +11,7 @@ import Page3 from '../back/c.vue'
 import CarsSpareParts from '../front/CarsSpareParts/CarsSpareParts.vue'
 import CarsSparePartsDetails from '../front/CarsSpareParts/CarsSparePartsDetails.vue'
 import ShoppingCart from '../front/ShoppingCart/ShoppingCart.vue'
+import Notice from '../front/Notice/Notice.vue'
 
 Vue.use(Router)
 
@@ -23,16 +24,16 @@ export default new Router({
             component: Home,
             children:[
                 {
-                    path: '/Page1',
-                    name: 'Page1',
+                    path: '/configure',
+                    name: 'configure',
                     component: Page1
                 },  {
-                    path: '/Page2',
-                    name: 'Page2',
-                    component: Page2
+                    path: '/notice',
+                    name: 'notice',
+                    component: Notice
                 },  {
-                    path: '/Page3',
-                    name: 'Page3',
+                    path: '/answerCenter',
+                    name: 'answerCenter',
                     component: Page3
                 },  {
                     path: '/shoppingCart',

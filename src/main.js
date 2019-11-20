@@ -9,6 +9,7 @@ import './elementStyle.scss'    //自定义覆盖element样式
 import Router from 'vue-router'
 import moment from 'moment'   //时间戳转换
 import loading from './components/Loading/loading.js'   //自定义Loading组件，项目未应用该组件
+import store from './store'  //vue实例全局引入store对象
 
 // 处理vue router 报错
 const originalPush = Router.prototype.push
@@ -28,5 +29,6 @@ Vue.use(loading)
 
 new Vue({
     router,
+    store,
     render: h => h(App),
 }).$mount('#app')
