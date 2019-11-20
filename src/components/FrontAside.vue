@@ -17,7 +17,7 @@
     export default {
         data() {
             return {
-                activeIndex: '1',
+                activeIndex: this.$route.query.key ? this.$route.query.key :'1' ,
             }
         },
         created() {
@@ -28,21 +28,22 @@
                 this.activeIndex = key
                 switch (key) {
                     case '1':
-                        this.$router.push('/Page1');
+                        this.$router.push({ path: '/Page1', query: { key: 1 }});
                         break;
                     case '2':
-                        this.$router.push('/Page2')
+                        this.$router.push({ path: '/Page2', query: { key: 2 }});
                         break;
                     case '3':
-                        this.$router.push('/Page3')
+                        this.$router.push({ path: '/Page3', query: { key: 3 }});
                         break;
                     case '4':
-                        this.$router.push('/shoppingCart')
+                        this.$router.push({ path: '/shoppingCart', query: { key: 4 }});
                         break;
                     case '5':
-                        this.$router.push('/carsSpareParts')
+                        this.$router.push({ path: '/carsSpareParts', query: { key: 5}});
                         break;
                 }
+
             },
             getUserInfo(){
                 axios.fetchGet('/userInfo' ).then((res) => {

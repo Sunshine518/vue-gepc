@@ -11,7 +11,7 @@
                     ]"
                 >
                     <el-input v-model.number="numberValidateForm.loginName" auto-complete="off"
-                              style="width: 240px"></el-input>
+                              style="width: 240px">  </el-input>
                 </el-form-item>
 
                 <el-form-item
@@ -20,7 +20,10 @@
                         :rules="[
                       { required: true, message: '请输入密码'},
                     ]">
-                    <el-input type="password" v-model="numberValidateForm.password" autocomplete="off"  style="width: 240px"></el-input>
+                    <el-input :type="showPass ? 'password' : 'text'" v-model="numberValidateForm.password" autocomplete="off"  style="width: 240px">
+                        <i v-if="showPass" class="iconfont icon-eye1" slot="suffix" @click="showPass=!showPass"></i>
+                        <i v-if="!showPass" class="iconfont icon-eye2" slot="suffix" @click="showPass=!showPass"></i>
+                    </el-input>
                 </el-form-item>
 
                 <el-form-item>
@@ -45,7 +48,8 @@
                 numberValidateForm: {
                     loginName: '',
                     password: ''
-                }
+                },
+                showPass:true
             }
         },
         created() {

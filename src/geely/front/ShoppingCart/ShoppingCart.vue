@@ -152,7 +152,6 @@
         },
         methods: {
             getList() {
-                window.console.log(this.formItem)
                 const obj = ajax.formatParams(this.formItem)
                 axios.fetchGet('/onestep/base/epc/epc/shoppingCar/queryAllShopCarDetailedListForPage', obj).then((res) => {
                     this.tableData = res.data.content
