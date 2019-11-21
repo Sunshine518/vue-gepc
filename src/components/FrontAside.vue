@@ -46,12 +46,12 @@
 
             },
             getUserInfo(){
-                axios.fetchGet('/userInfo' ).then((res) => {
+                // axios.fetchGet('/userInfo' ).then((res) => {
                     // window.console.log(res)
-                }).catch(err=>{
-                        window.console.log(err)
-                    }
-                )
+                // }).catch(err=>{
+                //         window.console.log(err)
+                //     }
+                // )
             },
             logout(){
                 session.logout()

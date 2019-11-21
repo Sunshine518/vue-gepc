@@ -141,8 +141,8 @@
                     endTime: ''
                 },
                 tableData: [],
-                currentPage: 1,
-                pageTotal: 0,
+                currentPage: 0,
+                pageTotal: 1,
                 loading: true
             }
         },

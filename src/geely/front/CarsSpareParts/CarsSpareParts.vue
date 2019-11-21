@@ -77,7 +77,7 @@
         data() {
             return {
                 formItem: {
-                    spareNo: '',
+                    spareNo: '1010006200',
                     materialCode: ''
                 },
                 tableData: [],
